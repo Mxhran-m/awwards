@@ -13,7 +13,7 @@ const data = [
 ]
 
     return (
-        <div className="flex items-center">
+        <div className="flex items-center mt-20">
             {data.map((elem, index)=> <Stripe val={elem}/>)}
         </div>
     )
