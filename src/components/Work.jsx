@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"
 
 export default function Work() {
 
@@ -19,7 +20,7 @@ const images = [
                 <h1 className="text-[41vw] leading-none select-none font-medium">work</h1>
                 <h4 className="text-[1.3vw] font-light text-zinc-400">Web Design, Webflow Development, Creative Development</h4>
                 <div className="w-full h-full absolute top-0">
-                    {images.map((elem, index) =>(elem.isActive && <img src={elem.url} style={{top: elem.top, left: elem.left}} className="absolute -translate-x-[50%] -translate-y-[50%] w-72 rounded-lg" alt="" />))}
+                    {images.map((elem, index) =>(elem.isActive && <img key={index} src={elem.url} style={{top: elem.top, left: elem.left}} className="absolute -translate-x-[50%] -translate-y-[50%] w-72 rounded-lg" alt="" />))}
                 </div>
             </div>
         </div>

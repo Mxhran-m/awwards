@@ -29,7 +29,7 @@ export default function Marqxs() {
   ];
   return (
     <div className="py-10 mt-32">
-      {images.map(items => <Marquee imageurls={items} />)}
+      {images.map((items, index) => <Marquee key={index} imageurls={items} />)}
     </div>
   );
 }
