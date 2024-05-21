@@ -1,9 +1,13 @@
 import React from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
-export default function Card({ width, start, para, hover}) {
+export default function Card({ width, start, para, hover }) {
   return (
-    <div className={`bg-zinc-800 p-5 rounded-xl ${width} hover:${hover} min-h-[28rem] flex flex-col justify-between`}>
+    <div
+      className={`bg-zinc-800 p-5 rounded-xl ${width} ${
+        hover ? "hover:bg-violet-400 transition duration-300 ease-in-out" : ""
+      } min-h-[28rem] flex flex-col justify-between`}
+    >
       <div className="w-full">
         <div className="w-full flex justify-between items center">
           <h3>One heading</h3>
