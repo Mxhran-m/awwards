@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Product from "./Product";
+import { motion } from "framer-motion";
 
 export default function Products() {
   const products = [
@@ -32,10 +33,45 @@ export default function Products() {
       case: true,
     },
   ];
+
+  const [pos, setPos] = useState(0);
+  const mover = (val) => setPos(val * 23);
+
   return (
     <>
-      <div className="mt-32">
-        {products.map((elem, index)=> <Product key={index} val={elem} />)}
+      <div className="mt-32 relative">
+        {products.map((elem, index) => (
+          <Product key={index} val={elem} mover={mover} count={index} />
+        ))}
+        <div className="absolute top-0 w-full h-full pointer-events-none">
+          <motion.div
+            initial={{ y: pos, x: "-50%" }}
+            transition={{ ease: [0.83, 0, 0.17, 1], duration: 0.5 }}
+            animate={{ y: pos + `rem` }}
+            className="window absolute w-[32rem] h-[23rem] bg-white left-[45%] overflow-hidden"
+          >
+            <motion.div
+              animate={{ y: -pos + `rem` }}
+              transition={{ease: [0.83, 0, 0.17, 1], duration: .5}}
+              className="w-full h-full bg-sky-500"
+            ></motion.div>
+            <motion.div
+              animate={{ y: -pos + `rem` }}
+              transition={{ease: [0.83, 0, 0.17, 1], duration: .5}}
+              className="w-full h-full bg-red-400"
+            ></motion.div>
+            <motion.div
+              animate={{ y: -pos + `rem` }}
+              transition={{ease: [0.83, 0, 0.17, 1], duration: .5}}
+              className="w-full h-full bg-blue-300"
+            ></motion.div>
+            <motion.div
+              animate={{ y: -pos + `rem` }}
+              transition={{ease: [0.83, 0, 0.17, 1], duration: .5}}
+              className="w-full h-full bg-green-200"
+            ></motion.div>
+          </motion.div>
+        </div>
       </div>
     </>
   );
