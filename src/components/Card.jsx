@@ -1,9 +1,11 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 export default function Card({ width, start, para, hover }) {
   return (
-    <div
+    <motion.div
+      whileHover={{padding: "25px"}}
       className={`bg-zinc-800 p-5 rounded-xl ${width} ${
         hover ? "hover:bg-violet-400 transition duration-300 ease-in-out" : ""
       } min-h-[28rem] flex flex-col justify-between`}
@@ -34,6 +36,6 @@ export default function Card({ width, start, para, hover }) {
           </>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
