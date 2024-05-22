@@ -54,7 +54,8 @@ export default function Products() {
               animate={{ y: -pos + `rem` }}
               transition={{ease: [0.83, 0, 0.17, 1], duration: .5}}
               className="w-full h-full bg-sky-500"
-            ></motion.div>
+            >
+            </motion.div>
             <motion.div
               animate={{ y: -pos + `rem` }}
               transition={{ease: [0.83, 0, 0.17, 1], duration: .5}}
